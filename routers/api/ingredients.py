@@ -1,9 +1,15 @@
-from fastapi import APIRouter, Depends, HTTPException
-from api import router
+from fastapi import APIRouter
+from utils.read_file import get_ingredients as get_ingredients_data
+from schemas.ingredients import IngredientsResponse
+from fastapi.responses import JSONResponse
 
+router = APIRouter()
 
-@router.get("/ingredients")
+@router.get("/ingredients", response_model=IngredientsResponse)
 def get_ingredients():
-    return {
-        "message": "Pong"
+
+    response = {
+        "data": get_ingredients_data()
     }
+
+    return JSONResponse(response)
