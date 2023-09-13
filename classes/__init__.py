@@ -9,3 +9,10 @@ class IngredientsDict(TypedDict):
     meats_and_proteins : list[str]
     fats : list[str]
     seasonings_and_flavorings : list[str]
+
+
+class OpenAIConfig(TypedDict):
+    api_key : str
+    engine : str
+    model: str
+    max_tokens : int
