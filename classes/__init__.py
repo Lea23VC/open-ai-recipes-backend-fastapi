@@ -11,6 +11,12 @@ class IngredientsDict(TypedDict):
     seasonings_and_flavorings : list[str]
 
 
+class IngredientList(TypedDict):
+    label: str
+    key: str
+    ingredients: list[str]
+
+
 class OpenAIConfig(TypedDict):
     api_key : str
     engine : str

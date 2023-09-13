@@ -5,11 +5,11 @@ from fastapi.responses import JSONResponse
 
 router = APIRouter()
 
-@router.get("/ingredients", response_model=IngredientsResponse)
+@router.get("/ingredients")
 def get_ingredients():
 
     response = {
         "data": get_ingredients_data()
     }
 
-    return JSONResponse(response)
+    return response
