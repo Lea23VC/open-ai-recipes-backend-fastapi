@@ -23,10 +23,12 @@ def get_recipe(ingredientsList: List[IngredientList] = Body(..., embed=True)):
 
         complete_prompt = (
             f"{openai_config['prompt']} {', '.join(all_ingredients)}. "
-            "Usa SOLO los ingredientes mencionados. INTENTA USAR TODOS LOS INGREDIENTES. "
-            "Recuerda listar los ingredientes y las instrucciones. "
-            "Y si no pudiste ocupar ingredientes, mencionalo indicando cuales, pero solo eso, no otro detalle. "
+            "INTENTA USAR TODOS LOS INGREDIENTES. \n"
+            "Recuerda listar los ingredientes y las instrucciones. \n"
+            "Y si no pudiste ocupar ingredientes, mencionalo indicando cuales, pero solo eso, no otro detalle, si ocupaste todos los ingredientes entonces no lo menciones. \n"
             "Dame SIEMPRE la respuesta con tags html como <h1>, <h2>, <h3>, <p>, <li>, <il>, etc y <br>, y no hagas mención de esto en la respuesta."
+            "El titulo de la receta en <h1>, el titulo de los ingredientes como <h3>, los ingredientes como una lista con <li>, las instrucciones como una lista con <li>."
+            "Cualquier otro texto como <p>. Puedes usar <b>. \n"
         )
 
         completion = openai.ChatCompletion.create(

@@ -29,6 +29,7 @@ provider:
   region: us-east-1
   profile: default
   architecture: arm64
+  timeout: 300
 
 # you can add statements to the Lambda function's IAM Role here
 #  iam:
