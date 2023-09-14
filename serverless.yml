@@ -27,7 +27,6 @@ provider:
 # you can overwrite defaults here
   stage: dev
   region: us-east-1
-  profile: default
   architecture: arm64
   timeout: 300
 
