@@ -31,6 +31,12 @@ provider:
   architecture: arm64
   timeout: 300
 
+  environment:
+    OPENAI_API_KEY: ${env:OPENAI_API_KEY}
+    OPENAI_ENGINE: ${env:OPENAI_ENGINE}
+    OPENAI_MAX_TOKENS: ${env:OPENAI_MAX_TOKENS}
+    OPENAI_MODEL: ${env:OPENAI_MODEL}
+
 # you can add statements to the Lambda function's IAM Role here
 #  iam:
 #    role:
